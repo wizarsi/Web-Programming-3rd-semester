@@ -1,0 +1,102 @@
+body{
+	background-image: url(img/geometry-lines-neon.jpg);
+	background-attachment: fixed;
+}
+.header{
+	font-family: monospace;
+	font-size: 25pt;
+	color: black;
+	text-align: center;
+	margin: 0 auto;
+	background-color: rgba(255, 165, 0,0.8);
+	border-radius: 10px;
+	width: 50%;
+}
+
+.main-child{
+	width: 50%;
+	padding: 0;
+	margin: 10px 25%;
+	text-align: center;
+	font-family: sans-serif;
+}
+
+#clock{
+	font-family: sans-serif;
+	font-size: 20pt;
+	border-radius: 10px;
+	background-color: rgba(61, 171, 255, 0.8);
+}
+
+#table-form,#table-area{
+	border-radius: 10px;
+	padding: 5px;
+	background-color: rgba(173, 255, 47, 0.8);
+}
+
+#clock{
+	padding: 5px;
+	color: white;
+}
+
+.exception-field{
+	color: red;
+	font-size: 11pt;
+}
+
+#subBtn,#clrBtn{
+	width: 30%;
+	margin: 5px 35%;
+	padding: 5px;
+}
+#subBtn:hover,#clrBtn:hover{
+	color: red;
+}
+#table-main{
+	width: 60%;
+	margin: auto auto;
+}
+
+#table-result {
+	font-family: sans-serif;
+	background-color: rgba(61, 171, 255, 0.8);
+	text-align: center;
+	width: 70%;
+	margin: 0 auto;
+	border-collapse: collapse;
+	color: white;
+	border: 2px solid transparent;
+}
+#table-result th,#table-result td{
+	border: 2px solid transparent;
+
+}
+
+
+input[type="radio"]:hover {
+	width: 15px;
+	height: 15px;
+	color: blue;
+}
+
+input[type="text"]::placeholder {
+	text-align: center;
+}
+
+input[type="text"]{
+	color: blue;
+}
+
+input[type="radio"]:checked + span{
+	color: blue;
+}
+input[type="radio"]:hover + span{
+	color: blue;
+}
+
+.radio-button label{
+	margin:2px 2px;
+}
+
+
+

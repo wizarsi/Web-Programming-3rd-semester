@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:a="http://java.sun.com/jsf/composite"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:custom="http://java.sun.com/jsf/composite/tags"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+<h:head>
+    <h:outputStylesheet library="css" name="app.css"/>
+</h:head>
+<h:body>
+    <div id="container">
+        <div id="nav">
+            <ui:include src="navigation.xhtml"/>
+        </div>
+        <div id="control">
+            <div id="area-enot">
+                <div jsf:id="area">
+                    <custom:svg-area/>
+                </div>
+            </div>
+            <h:form id="form">
+                <p:growl id="msgs"/>
+                <div id="input-x">
+                    <p:panelGrid styleClass="ui-noborder" columns="3">
+                        <p:outputLabel for="coord-x">Выберите x:</p:outputLabel>
+                        <p:spinner name="x" min="-5" max="5" placeholder="(-5..5)" id="coord-x"
+                                   value="#{pointsManager.strX}">
+                            <f:validator validatorId="commonValidator"/>
+                        </p:spinner>
+                        <p:message id="x-error" for="coord-x" display="icon"/>
+                    </p:panelGrid>
+                </div>
+                <div id="input-y">
+               <p:panelGrid styleClass="ui-noborder" columns="3">
+                        <h:outputLabel for="coord-y" value="Выберите y:"/>
+                        <p:inputText onenter="handleYInput()" onchange="handleYInput()" name="y" id="coord-y"
+                                     placeholder="(-5..5)" value="#{pointsManager.strY}">
+                            <f:validator validatorId="commonValidator"/>
+                        </p:inputText>
+                        <p:message id="y-error" for="coord-y" display="icon"/>
+                    </p:panelGrid>
+                </div>
+                <div id="input-r">
+                    <p:panelGrid styleClass="ui-noborder" columns="3">
+                        <h:outputLabel for="coord-r" value="Выберите r:"/>
+                        <p:selectOneMenu name="r" id="coord-r" value="#{pointsManager.strR}">
+                            <f:selectItem itemValue="1" itemLabel="1"/>
+                            <f:selectItem itemValue="1.5" itemLabel="1.5"/>
+                            <f:selectItem itemValue="2" itemLabel="2"/>
+                            <f:selectItem itemValue="2.5" itemLabel="2.5"/>
+                            <f:selectItem itemValue="3" itemLabel="3"/>
+                            <f:validateDoubleRange maximum="3" minimum="1"/>
+                            <f:ajax execute="@parent" render="area"/>
+                        </p:selectOneMenu>
+                        <p:message id="r-error" for="coord-r" display="icon"/>
+                    </p:panelGrid>
+                </div>
+                <ul>
+                    <li>
+                        <div id="submitParent">
+                            <p:commandButton id="submitBtn" action="#{pointsManager.submitButton()}" type="submit"
+                                             value="Проверить" update="result-table area msgs r-error y-error x-error">
+                                <!--<p:ajax process="@form" update="result-table area"/>-->
+                            </p:commandButton>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="clearParent">
+                            <p:commandButton id="clearBtn" type="submit" value="Очистить результаты"
+                                             action="#{pointsManager.clearButton()}" update="result-table area">
+                                <!--<p:ajax process="@this" update="result-table area"/>-->
+                            </p:commandButton>
+                        </div>
+                    </li>
+                </ul>
+
+            </h:form>
+
+        </div>
+        <div id="table-results">
+            <p:dataTable id="result-table" value="#{pointsManager.results}" var="result" emptyMessage="Данных пока нет :)">
+                <p:column>
+                    <f:facet name="header">№</f:facet>
+                    ${result.number}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">X</f:facet>
+                    ${result.x}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Y</f:facet>
+                    ${result.y}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">R</f:facet>
+                    ${result.r}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Результат</f:facet>
+                    ${result.hitValue ? "Попадание" : "Непопадание"}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Время обработки</f:facet>
+                    ${result.time} нс
+                </p:column>
+            </p:dataTable>
+        </div>
+    </div>
+    <h:outputScript library="js" name="app.js"/>
+</h:body>
+</html>
+

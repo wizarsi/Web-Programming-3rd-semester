@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+<f:view>
+    <composite:interface>
+
+    </composite:interface>
+    <composite:implementation>
+            <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="150" x2="300" y2="150" stroke="black"></line>
+                <line x1="150" y1="0" x2="150" y2="300" stroke="black"></line>
+                <line x1="270" y1="148" x2="270" y2="152" stroke="black"></line>
+                <line x1="210" y1="148" x2="210" y2="152" stroke="black"></line>
+                <line x1="90" y1="148" x2="90" y2="152" stroke="black"></line>
+                <line x1="30" y1="148" x2="30" y2="152" stroke="black"></line>
+                <line x1="148" y1="30" x2="152" y2="30" stroke="black"></line>
+                <line x1="148" y1="90" x2="152" y2="90" stroke="black"></line>
+                <line x1="148" y1="210" x2="152" y2="210" stroke="black"></line>
+                <line x1="148" y1="270" x2="152" y2="270" stroke="black"></line>
+                <text x="290" y="140">X</text>
+                <text x="160" y="15">Y</text>
+                <text x="265" y="140">#{pointsManager.areaManager.r}</text>
+                <text x="200" y="140">#{pointsManager.areaManager.r/2}</text>
+                <text x="156" y="275">#{-(pointsManager.areaManager.r)}</text>
+                <text x="75" y="140">#{-(pointsManager.areaManager.r/2)}</text>
+                <text x="20" y="140">#{-(pointsManager.areaManager.r)}</text>
+                <text x="156" y="35">#{pointsManager.areaManager.r}</text>
+                <text x="156" y="95">#{pointsManager.areaManager.r/2}</text>
+                <text x="156" y="215">#{-(pointsManager.areaManager.r/2)}</text>
+                <polygon points="300,150 295,155 295, 145" fill="black" stroke="black"></polygon>
+                <polygon points="150,0 145,5 155,5" fill="black" stroke="black"></polygon>
+                <rect x="30" y="30" width=" 120" height="120" fill-opacity="0.4" stroke="navy"
+                      fill="blue"></rect>
+                <polygon points="150,150 90,150 150,270" fill-opacity="0.4" stroke="navy"
+                         fill="blue"></polygon>
+                <path d="M150 150 L 150 270 C 150 270 270 270 270 150" fill-opacity="0.4" stroke="navy"
+                      fill="blue"></path>
+                <g jsfc="ui:repeat" value="#{pointsManager.areaManager.points}" var="point">
+                <circle r="5" cx="#{point.coordX}" cy="#{point.coordY}"
+                            fill-opacity="0.7" fill="#{point.hitValue ? 'green' : 'red'}" visibility="visible"/>
+                </g>
+            </svg>
+    </composite:implementation>
+</f:view>
+</html>

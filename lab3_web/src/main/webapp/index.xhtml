@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Web-lab3</title>
+    <h:outputStylesheet library="css" name="index.css"/>
+    <h:outputStylesheet library="css" name="nav.css"/>
+    <h:outputScript library="js" name="clock.js"/>
+    <h:link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'/>
+    <h:link href="https://fonts.googleapis.com/css2?family=Dancing" rel="stylesheet"/>
+
+</h:head>
+<h:body>
+    <div id="container">
+        <div id="nav">
+            <ui:include src="navigation.xhtml"/>
+        </div>
+        <div id="content">
+            <table class="child" id="header">
+                <tr>
+                    <td>Васильев Андрей Юрьевич P3215</td>
+                </tr>
+                <tr>
+                    <td>Вариант 5621621</td>
+                </tr>
+            </table>
+            <div id="clock"></div>
+        </div>
+    </div>
+</h:body>
+</html>

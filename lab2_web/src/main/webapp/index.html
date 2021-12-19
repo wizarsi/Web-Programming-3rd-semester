@@ -1,0 +1,154 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web-lab2</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="https://se.ifmo.ru/o/helios-theme/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<table id='table-main'>
+    <tbody>
+    <tr>
+        <td colspan="2">
+            <table class="child" id="header">
+                <tr>
+                    <td>Васильев Андрей Юрьевич P3215</td>
+                </tr>
+                <tr>
+                    <td>Вариант 15304</td>
+                </tr>
+            </table>
+    </tr>
+    </td>
+    <tr>
+        <td>
+            <table class="child" id="table-clock">
+                <tr>
+                    <td colspan="2">
+                        <div id="clock"></div>
+                    </td>
+                </tr>
+            </table>
+    </tr>
+    </td>
+    <tr>
+        <td>
+            <table class="child" id="main-area">
+                <tbody>
+                <tr>
+                    <td>
+                        <svg width="300" height="300">
+                            <line x1="0" y1="150" x2="300" y2="150" stroke="black"></line>
+                            <line x1="150" y1="0" x2="150" y2="300" stroke="black"></line>
+                            <line x1="270" y1="148" x2="270" y2="152" stroke="black"></line>
+                            <text x="290" y="140">X</text>
+                            <text x="160" y="15">Y</text>
+                            <text x="265" y="140">R</text>
+                            <line x1="210" y1="148" x2="210" y2="152" stroke="black"></line>
+                            <text x="200" y="140">R/2</text>
+                            <line x1="90" y1="148" x2="90" y2="152" stroke="black"></line>
+                            <text x="75" y="140">-R/2</text>
+                            <line x1="30" y1="148" x2="30" y2="152" stroke="black"></line>
+                            <text x="20" y="140">-R</text>
+                            <line x1="148" y1="30" x2="152" y2="30" stroke="black"></line>
+                            <text x="156" y="35">R</text>
+                            <line x1="148" y1="90" x2="152" y2="90" stroke="black"></line>
+                            <text x="156" y="95">R/2</text>
+                            <line x1="148" y1="210" x2="152" y2="210" stroke="black"></line>
+                            <text x="156" y="215">-R/2</text>
+                            <line x1="148" y1="270" x2="152" y2="270" stroke="black"></line>
+                            <text x="156" y="275">-R</text>
+                            <polygon points="300,150 295,155 295, 145" fill="black" stroke="black"></polygon>
+                            <polygon points="150,0 145,5 155,5" fill="black" stroke="black"></polygon>
+                            <rect x="150" y="90" width="120" height="60" fill-opacity="0.4" stroke="navy"
+                                  fill="blue"></rect>
+                            <polygon points="150,150 270,150 150,270" fill-opacity="0.4" stroke="navy"
+                                     fill="blue"></polygon>
+                            <path d="M150 150 L 30 150 C 30 150 30 30 150 30" fill-opacity="0.4" stroke="navy"
+                                  fill="blue"></path>
+                            <circle id="point" r="5" cx="150" cy="150"
+                                    fill-opacity="0.7" fill="red" stroke="firebrick" visibility="hidden"></circle>
+                        </svg>
+                    </td>
+                    <td>
+                        <form id="form" method="get">
+                            <table id="table-form">
+                                <tbody>
+                                <tr>
+                                    <td class="header-input" colspan="2" id="x">Изменение X:</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="radio-button">
+                                            <label><input type="radio" name="x" value="-3"><span>-3</span></label>
+                                            <label><input type="radio" name="x" value="-2"><span>-2</span></label>
+                                            <label><input type="radio" name="x" value="-1"><span>-1</span></label>
+                                            <label><input type="radio" name="x" value="0"><span>0</span></label>
+                                            <label><input type="radio" name="x" value="-1"><span>-1</span></label>
+                                            <label><input type="radio" name="x" value="2"><span>2</span></label>
+                                            <label><input type="radio" name="x" value="3"><span>3</span></label>
+                                            <label><input type="radio" name="x" value="4"><span>4</span></label>
+                                            <label><input type="radio" name="x" value="5"><span>5</span></label>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="exception-field">
+                                        <div id='exceptionFieldX'></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="header-input"><label for="y" id="y">Изменение Y:</label></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input name="y" class="input" type="text" placeholder="(-3;3)"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="exception-field">
+                                        <div id='exceptionFieldY'></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="header-input" id="r">Изменение R:</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input name="r" class="input" type="text" placeholder="(2;5)"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="exception-field">
+                                        <div id='exceptionFieldR'></div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button type="button" id="subBtn">Проверить точку</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            <div id="resultBox">
+
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
