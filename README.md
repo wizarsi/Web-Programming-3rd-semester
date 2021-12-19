@@ -1,6 +1,6 @@
 # Web-Programming-3rd-semester
 ITMO University labs. Many ways to build a web application.
-First 3 labs frontend are JavaScript,HTML,CSS.
+First 3 labs frontend only are JavaScript,HTML,CSS.
 * 1st lab - backend - PHP.
 * 2nd lab - backend - Java Servlets.
 * 3rd lab - backend - Java Server Faces Framework(JSF).
